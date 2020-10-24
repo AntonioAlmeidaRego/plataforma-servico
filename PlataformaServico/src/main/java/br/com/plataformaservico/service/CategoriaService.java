@@ -17,6 +17,7 @@ public class CategoriaService implements EntityService<Categoria> {
 
 	@Override
 	public void save(Categoria entity) {
+		entity.setActive(true); 
 		repository.saveAndFlush(entity);
 	}
 	
@@ -27,7 +28,11 @@ public class CategoriaService implements EntityService<Categoria> {
 
 	@Override
 	public void deleteById(Long id) {
-		repository.deleteById(id);
+		Categoria categoria = getOne(id);
+		if(categoria.isNotNull()) {
+			categoria.setActive(false);
+			update(categoria);
+		}
 	}
 
 	@Override
@@ -48,4 +53,44 @@ public class CategoriaService implements EntityService<Categoria> {
 	public Categoria exist(String nome) {
 		return repository.exist(nome);
 	}
+
+	@Override
+	public List<Categoria> findAllByTrash() {
+		return repository.findAllByTrash();
+	}
+
+	@Override
+	public void restore(Long id) {
+		Categoria categoria = getOne(id);
+		if(categoria.isNotNull()) {
+			categoria.setActive(true);
+			update(categoria);
+		}
+	}
+
+	@Override
+	public void restore(String idCrypt) {
+		Categoria categoria = findByIdCrypt(idCrypt);
+		if(categoria.isNotNull()) {
+			categoria.setActive(true);
+			update(categoria);
+		}
+	}
+
+	@Override
+	public void restoreAll(List<Categoria> entities) {
+		for(Categoria categoria : entities) {
+			categoria.setActive(true);
+			update(categoria);
+		}
+	}
+
+	@Override
+	public void restoreAll() {
+		for(Categoria categoria : findAllByTrash()) {
+			categoria.setActive(true);
+			update(categoria);
+		}
+	}
+	
 }

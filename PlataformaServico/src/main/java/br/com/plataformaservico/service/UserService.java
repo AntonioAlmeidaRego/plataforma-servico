@@ -43,4 +43,34 @@ public class UserService implements EntityService<User>{
 		return repository.findByEmailAndPassword(email, password);
 	}
 
+	@Override
+	public List<User> findAllByTrash() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void restore(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void restore(String idCrypt) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void restoreAll(List<User> entities) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void restoreAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

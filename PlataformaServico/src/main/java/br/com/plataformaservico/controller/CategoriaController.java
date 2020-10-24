@@ -51,7 +51,7 @@ public class CategoriaController extends EntityController {
 
 	@GetMapping("/update/{id}")
 	public ModelAndView update(@PathVariable("id") String id) {
-		if (categoriaService.findByIdCrypt(id) != null) {
+		if (categoriaService.findByIdCrypt(id).isNotNull()) {
 			return cadastro(categoriaService.findByIdCrypt(id));
 		}
 		setMessage("Não Encontrado, por favor tente outro!");
@@ -62,7 +62,7 @@ public class CategoriaController extends EntityController {
 	@GetMapping("/delete/{id}")
 	public ModelAndView delete(@PathVariable("id") String id) {
 		Categoria categoria = categoriaService.findByIdCrypt(id);
-		if (categoria != null) {
+		if (categoria.isNotNull()) {
 			categoriaService.deleteById(categoria.getId());
 			setMessage("Categoria removida com sucesso!");
 			setRedirectStatus(HttpStatus.OK);
