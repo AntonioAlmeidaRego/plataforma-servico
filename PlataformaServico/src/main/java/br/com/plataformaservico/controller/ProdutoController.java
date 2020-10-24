@@ -44,7 +44,7 @@ public class ProdutoController extends EntityController {
 
 	@GetMapping("/findAll")
 	public ModelAndView findAll() {
-		return viewSession(view(new ModelAndView("produto/lista").addObject("lista", produtoService.findAll())));
+		return viewSession(view(new ModelAndView("produto/lista").addObject("produtos", produtoService.findAll())));
 	}
 
 	@GetMapping("/delete/{id}")
