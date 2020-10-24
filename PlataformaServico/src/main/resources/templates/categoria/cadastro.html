@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuário</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" th:href="@{template/plugins/fontawesome-free/css/all.min.css}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" th:href="@{/template/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css}">
+    <!-- iCheck -->
+    <link rel="stylesheet" th:href="@{/template/plugins/icheck-bootstrap/icheck-bootstrap.min.css}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" th:href="@{/template/plugins/jqvmap/jqvmap.min.css}">
+    <!-- Theme style -->
+    <link rel="stylesheet" th:href="@{/template/dist/css/adminlte.min.css}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" th:href="@{/template/plugins/overlayScrollbars/css/OverlayScrollbars.min.css}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" th:href="@{/template/plugins/daterangepicker/daterangepicker.css}">
+    <!-- summernote -->
+    <link rel="stylesheet" th:href="@{/template/plugins/summernote/summernote-bs4.css}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition register-page">
+<div class="register-box">
+    <div class="card">
+        <div class="card-body register-card-body">
+            <th:block th:if="${success != null}">
+                <div class="card-body">
+                    <div class="callout callout-success">
+                        <h5><i class="fas fa-bullhorn"></i> Aviso!</h5>
+                        <p class="text-uppercase" th:text="${success}"></p>
+                    </div>
+                </div>
+            </th:block>
+            <p class="login-box-msg text-uppercase">Registo de membro!</p>
+
+            <form th:object="${categoria}" th:action="@{/categoria/save}" method="post">
+                <div class="input-group mb-3">
+                    <input th:field="*{nome}" required type="text" class="form-control" placeholder="Full name">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-save" style="color: #f5f5f5"></i>
+                            Register</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+</div>
+</body>
+</html>

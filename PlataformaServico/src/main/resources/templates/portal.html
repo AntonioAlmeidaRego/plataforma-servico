@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bem-vindo!</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" th:href="@{template/plugins/fontawesome-free/css/all.min.css}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" th:href="@{/template/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css}">
+    <!-- iCheck -->
+    <link rel="stylesheet" th:href="@{/template/plugins/icheck-bootstrap/icheck-bootstrap.min.css}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" th:href="@{/template/plugins/jqvmap/jqvmap.min.css}">
+    <!-- Theme style -->
+    <link rel="stylesheet" th:href="@{/template/dist/css/adminlte.min.css}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" th:href="@{/template/plugins/overlayScrollbars/css/OverlayScrollbars.min.css}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" th:href="@{/template/plugins/daterangepicker/daterangepicker.css}">
+    <!-- summernote -->
+    <link rel="stylesheet" th:href="@{/template/plugins/summernote/summernote-bs4.css}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition register-page">
+<div class="register-box">
+    <div class="card">
+        <div class="card-body register-card-body">
+            <p class="login-box-msg" style="font-size: 50px;">Bem-vindo!</p>
+            <hr />
+            <div class="row">
+                <div class="col-sm-8">
+                    <a th:href="@{/categoria/cadastro}" class="btn btn-app">
+                        <i class="fas fa-plus-circle"></i>
+                        Registrar Categoria
+                    </a>
+                </div>
+                <div class="col-sm-3">
+                    <a th:href="@{/categoria/findAll}" class="btn btn-app">
+                        <i class="fas fa-list-alt"></i>
+                        Listar Categorias
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+</div>
+</body>
+</html>
