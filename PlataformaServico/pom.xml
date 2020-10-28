@@ -19,12 +19,7 @@
 		<java.version>11</java.version>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>entity-query-db</groupId>
-			<artifactId>entity-query</artifactId>
-			<version>0.0.1</version>
-		</dependency>
+	<dependencies> 
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
